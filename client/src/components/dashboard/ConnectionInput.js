@@ -13,9 +13,6 @@ const useStyles = makeStyles({
     fontSize: '1em',
     color: "#4fbbd6"
   },
-  content: {
-    color: "#4fbbd6",
-  },
   input: {
     color: "#4fbbd6",
   }
@@ -27,7 +24,7 @@ export default function ConnectionInput(props) {
   return (
     <div>
       <Card className={classes.root}>
-        <CardContent className={classes.content}>
+        <CardContent>
           <Typography className={classes.title} color="textSecondary" gutterBottom>
             Remote Connection
           </Typography>

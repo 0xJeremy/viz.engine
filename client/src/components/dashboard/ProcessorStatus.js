@@ -1,11 +1,22 @@
 import React, { Component } from 'react';
 import { makeStyles } from "@material-ui/core/styles";
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 
 const useStyles = makeStyles(theme => ({
+  root: {
+    marginTop: "0.5em",
+    backgroundColor: "#242730",
+  },
+  title: {
+    fontSize: '1em',
+    color: "#4fbbd6"
+  },
   value: {
   	paddingRight: '5px',
     color: 'white'
@@ -75,4 +86,21 @@ class StateTable extends Component {
   }
 }
 
-export default StateTable;
+export default function ProcessorStatus(props) {
+  const classes = useStyles();
+  const socket = props.socket;
+  return (
+    <div>
+
+      <Card className={classes.root}>
+        <CardContent className={classes.content}>
+          <Typography className={classes.title} color="textSecondary" gutterBottom>
+            Processor Status
+          </Typography>
+          <StateTable socket={socket}/>
+        </CardContent>
+      </Card>
+
+   </div>
+  );
+}

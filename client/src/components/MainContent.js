@@ -57,4 +57,4 @@ function MainContents(props) {
 	);
 }
 
-export default MainContents
+export default MainContents;

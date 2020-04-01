@@ -6,7 +6,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import ToolBar from './ToolBar';
 import MainContents from './MainContent';
 
-const drawerWidth = 360;
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -20,16 +19,6 @@ const useStyles = makeStyles(theme => ({
     background: '#29323c',
     position: 'fixed'
   },
-  drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
-  },
-  drawerPaper: {
-    width: drawerWidth,
-    backgroundColor: '#111',
-    color: '#999999',
-    colorPrimary: '#fff'
-  },
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
@@ -39,18 +28,6 @@ const useStyles = makeStyles(theme => ({
     }),
     backgroundColor: '#09101d'
   },
-  contentShift: {
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    marginRight: 0,
-  },
-  madeby: {
-    position: 'fixed',
-    right: '1vh',
-    bottom: '1vh'
-  }
 }));
 
 function Page() {

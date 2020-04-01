@@ -13,17 +13,6 @@ const useStyles = makeStyles({
     fontSize: '1em',
     color: "#4fbbd6"
   },
-  content: {
-    color: "#4fbbd6",
-  },
-  logs: {
-    border: '1px #4fbbd6 solid',
-    borderWidth: '0px 0px 0px 4px',
-    paddingLeft: '8px',
-    backgroundColor: "black",
-    color: 'white',
-    minHeight: '15em'
-  }
 });
 
 export default function Terminal(props) {
@@ -32,11 +21,12 @@ export default function Terminal(props) {
   return (
     <div>
       <Card className={classes.root}>
-        <CardContent className={classes.content}>
+        <CardContent>
           <Typography className={classes.title} color="textSecondary">
             Command Console
           </Typography>
         </CardContent>
+
         <ReactTerminal theme={{
           background: 'black',
           promptSymbolColor: '#4fbbd6',
@@ -47,8 +37,9 @@ export default function Terminal(props) {
           spacing: '1%',
           fontFamily: 'monospace',
           width: '100%',
-          height: '17em'
+          height: '25vh'
         }}/>
+        
       </Card>
     </div>
   );

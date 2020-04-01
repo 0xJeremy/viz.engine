@@ -4,9 +4,9 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
-import StateTable from './StateTable.js';
-import PiStatus from './PiStatus.js';
-import ConnectionInput from './ConnectionInput.js';
+import RobotStatus from './RobotStatus';
+import ConnectionInput from './ConnectionInput';
+import ProcessorStatus from './ProcessorStatus'
 
 const useStyles = makeStyles(theme => ({
   cardTitle: {
@@ -28,30 +28,16 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function RobotCard(props) {
+export default function RightPanel(props) {
   const classes = useStyles();
   const socket = props.socket;
   return (
     <div>
       {/*<ConnectionInput socket={socket} />*/}
 
-      <Card className={classes.root}>
-        <CardContent className={classes.content}>
-          <Typography className={classes.title} color="textSecondary" gutterBottom>
-            Robot Status
-          </Typography>
-          <StateTable socket={socket}/>
-        </CardContent>
-      </Card>
+      <RobotStatus socket={socket} />
 
-      <Card className={classes.root}>
-        <CardContent className={classes.content}>
-          <Typography className={classes.title} color="textSecondary" gutterBottom>
-            Raspberry Pi Info
-          </Typography>
-          <PiStatus socket={socket}/>
-        </CardContent>
-      </Card>
+      <ProcessorStatus socket={socket} />
 
    </div>
   );
