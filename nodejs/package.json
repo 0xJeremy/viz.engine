@@ -1,0 +1,11 @@
+{
+  "name": "viz.engine",
+  "version": "0.0.1",
+  "description": "A robot visualization framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jeremy Kanovsky",
+  "license": "ISC"
+}
