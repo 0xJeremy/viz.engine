@@ -1,0 +1,27 @@
+{
+  "name": "viz.engine",
+  "version": "0.1.0",
+  "description": "A universal robot visualizer",
+  "main": "index.js",
+  "scripts": {
+    "client": "cd client && npm start --silent",
+    "server": "cd server && npm start --silent",
+    "start": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xJeremy/viz.engine.git"
+  },
+  "author": {
+    "name": "Jeremy Kanovsky",
+    "url": "https://jeremykanovsky.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/0xJeremy/viz.engine/issues"
+  },
+  "homepage": "https://github.com/0xJeremy/viz.engine#readme",
+  "devDependencies": {
+    "concurrently": "^4.1.2"
+  }
+}
