@@ -17,16 +17,16 @@ const useStyles = makeStyles(theme => ({
     color: "#4fbbd6"
   },
   value: {
-    paddingRight: '5px',
+  	paddingRight: '5px',
     color: 'white'
   },
   units: {
-    paddingLeft: '0px',
+  	paddingLeft: '0px',
     color: 'white'
   },
   name: {
     color: 'white'
-  },
+  }
 }));
 
 function GetRow(props) {
@@ -46,16 +46,18 @@ class StateTable extends Component {
   constructor(props) {
     super();
     this.state = {
-      name: "Mr. Roboto",
-      time: "0:00:00.00",
-      runtime: "0:00:00.00",
-      battery: 99
+      lidar1: NaN,
+      lidar2: NaN,
+      servo1: NaN,
+      servo2: NaN,
+      servo3: NaN
     }
     props.socket.on('state', data => this.setState({
-      name: data.name,
-      time: data.time,
-      runtime: data.runtime,
-      battery: data.battery
+      lidar1: data.lidar1,
+      lidar2: data.lidar2,
+      servo1: data.servo1,
+      servo2: data.servo2,
+      servo3: data.servo3
     }));
   }
 
@@ -65,28 +67,31 @@ class StateTable extends Component {
         <TableBody>
 
           <TableRow>
-            <GetRow name={'Robot Name'} val={this.state.name}/>
+            <GetRow name={'Front Lidar'} val={this.state.lidar1} unit={'cm'}/>
           </TableRow>
 
           <TableRow>
-            <GetRow name={'Robot Time'} val={this.state.time}/>
+            <GetRow name={'Back Lidar'} val={this.state.lidar2} unit={'cm'}/>
           </TableRow>
 
           <TableRow>
-            <GetRow name={'Program Runtime'} val={this.state.runtime}/>
+            <GetRow name={'Servo 1'} val={this.state.servo1}/>
           </TableRow>
 
           <TableRow>
-            <GetRow name={'Battery Level'} val={this.state.battery}/>
+            <GetRow name={'Servo 2'} val={this.state.servo2}/>
           </TableRow>
 
+          <TableRow>
+            <GetRow name={'Servo 3'} val={this.state.servo3}/>
+          </TableRow>
         </TableBody>
       </Table>
     );
   }
 }
 
-export default function RobotStatus(props) {
+export default function SensorStatus(props) {
   const classes = useStyles();
   const socket = props.socket;
   return (
@@ -95,7 +100,7 @@ export default function RobotStatus(props) {
       <Card className={classes.root}>
         <CardContent className={classes.content}>
           <Typography className={classes.title} color="textSecondary" gutterBottom>
-            Robot Status
+            Sensor Status
           </Typography>
           <StateTable socket={socket}/>
         </CardContent>

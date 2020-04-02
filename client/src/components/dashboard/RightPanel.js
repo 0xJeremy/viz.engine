@@ -3,6 +3,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from '@material-ui/core/Grid';
 import RobotStatus from './RobotStatus';
 import ProcessorStatus from './ProcessorStatus';
+import ButtonPanel from './ButtonPanel';
+import SensorStatus from './SensorStatus';
 
 const useStyles = makeStyles(theme => ({
   cardTitle: {
@@ -20,8 +22,7 @@ const useStyles = makeStyles(theme => ({
   },
   grid: {
     marginTop: '0px',
-    minHeight: '39vh',
-    maxHeight: '39vh'
+    minHeight: '38vh'
   }
 }));
 
@@ -30,15 +31,19 @@ export default function RightPanel(props) {
   const socket = props.socket;
   return (
     <div>
+
+      <ButtonPanel />
+
+      <ButtonPanel />
+
       <Grid container spacing={2}>
 
         <Grid className={classes.grid} item xs>
-          <RobotStatus socket={socket} />
+          <SensorStatus socket={socket} />
         </Grid>
 
         <Grid className={classes.grid} item xs>
-          
-          <ProcessorStatus socket={socket} />
+          <RobotStatus socket={socket} />
         </Grid>
 
         <Grid className={classes.grid} item xs>
