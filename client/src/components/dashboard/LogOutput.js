@@ -13,7 +13,7 @@ const useStyles = makeStyles({
     color: "#4fbbd6"
   },
   logs: {
-    border: '1px #4fbbd6 solid',
+    border: '1px #D55D0E solid',
     borderWidth: '0px 0px 0px 4px',
     paddingLeft: '8px',
     backgroundColor: "black",

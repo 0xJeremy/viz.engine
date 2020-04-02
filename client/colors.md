@@ -11,4 +11,5 @@ Button Text: #dadde0
 
 Input boxes: #29323c
 
-Highlights: #4fbbd6
+Blue Highlights: #4fbbd6
+Orange Highlights: #D55D0E

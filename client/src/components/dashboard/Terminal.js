@@ -29,7 +29,7 @@ export default function Terminal(props) {
 
         <ReactTerminal theme={{
           background: 'black',
-          promptSymbolColor: '#4fbbd6',
+          promptSymbolColor: '#D55D0E',
           commandColor: '#fcfcfc',
           outputColor: '#fcfcfc',
           errorOutputColor: 'red',
