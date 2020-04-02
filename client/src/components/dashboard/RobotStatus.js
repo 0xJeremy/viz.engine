@@ -10,7 +10,6 @@ import TableRow from '@material-ui/core/TableRow';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    marginTop: "0.5em",
     backgroundColor: "#242730",
   },
   title: {
@@ -27,7 +26,7 @@ const useStyles = makeStyles(theme => ({
   },
   name: {
     color: 'white'
-  }
+  },
 }));
 
 function GetRow(props) {

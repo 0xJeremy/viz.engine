@@ -1,12 +1,8 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
-
+import Grid from '@material-ui/core/Grid';
 import RobotStatus from './RobotStatus';
-import ConnectionInput from './ConnectionInput';
-import ProcessorStatus from './ProcessorStatus'
+import ProcessorStatus from './ProcessorStatus';
 
 const useStyles = makeStyles(theme => ({
   cardTitle: {
@@ -22,10 +18,11 @@ const useStyles = makeStyles(theme => ({
     marginTop: "0.5em",
     backgroundColor: "#242730",
   },
-  title: {
-    fontSize: '1em',
-    color: "#4fbbd6"
-  },
+  grid: {
+    marginTop: '0px',
+    minHeight: '39vh',
+    maxHeight: '39vh'
+  }
 }));
 
 export default function RightPanel(props) {
@@ -33,12 +30,22 @@ export default function RightPanel(props) {
   const socket = props.socket;
   return (
     <div>
-      {/*<ConnectionInput socket={socket} />*/}
+      <Grid container spacing={2}>
 
-      <RobotStatus socket={socket} />
+        <Grid className={classes.grid} item xs>
+          <RobotStatus socket={socket} />
+        </Grid>
 
-      <ProcessorStatus socket={socket} />
+        <Grid className={classes.grid} item xs>
+          
+          <ProcessorStatus socket={socket} />
+        </Grid>
 
+        <Grid className={classes.grid} item xs>
+          <ProcessorStatus socket={socket} />
+        </Grid>
+
+      </Grid>
    </div>
   );
 }

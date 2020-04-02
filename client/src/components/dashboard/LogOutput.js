@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles({
   root: {
@@ -19,8 +18,8 @@ const useStyles = makeStyles({
     paddingLeft: '8px',
     backgroundColor: "black",
     color: 'white',
-    minHeight: '25vh',
-    maxHeight: '25vh'
+    minHeight: '28vh',
+    maxHeight: '28vh'
   }
 });
 

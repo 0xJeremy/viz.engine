@@ -10,7 +10,6 @@ import TableRow from '@material-ui/core/TableRow';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    marginTop: "0.5em",
     backgroundColor: "#242730",
   },
   title: {
@@ -51,12 +50,14 @@ class StateTable extends Component {
       ram: 128,
       networkUp: 128,
       networkDown: 128,
+      temp: 25
     }
     props.socket.on('state', data => this.setState({
       cpu: data.cpu,
       ram: data.ram,
       networkUp: data.netUp,
       networkDown: data.netDown,
+      temp: data.temp
     }));
   }
 
@@ -79,6 +80,10 @@ class StateTable extends Component {
 
           <TableRow>
             <GetRow name={'Network Download'} val={this.state.networkDown} unit={'mb'}/>
+          </TableRow>
+
+          <TableRow>
+            <GetRow name={'Temperature'} val={this.state.temp} unit={'°C'}/>
           </TableRow>
         </TableBody>
       </Table>

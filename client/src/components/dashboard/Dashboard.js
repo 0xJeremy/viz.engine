@@ -2,7 +2,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import RightPanel from "./RightPanel";
-import LogOutput from "./LogOutput";
 import Camera from "./Camera";
 import Interactions from './Interactions';
 

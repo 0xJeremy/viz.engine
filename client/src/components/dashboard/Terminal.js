@@ -37,7 +37,7 @@ export default function Terminal(props) {
           spacing: '1%',
           fontFamily: 'monospace',
           width: '100%',
-          height: '25vh'
+          height: '28vh'
         }}/>
         
       </Card>

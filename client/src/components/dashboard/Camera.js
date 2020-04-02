@@ -9,7 +9,7 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 const useStyles = makeStyles(theme => ({
 	root: {
 	  backgroundColor: "#242730",
-	  height: '100%'
+	  height: '100%',
 	},
 	title: {
 	  fontSize: '1em',
@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
 	},
 	camera: {
 	  width: '98%',
-	  height: '85.5%',
+	  height: '84.5%',
     backgroundColor: '#09101d'
   },
 }));
